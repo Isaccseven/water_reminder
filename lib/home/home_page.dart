@@ -17,7 +17,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   late SharedPreferences prefs;
-  var box = Hive.box('fluids');
 
   int _amountOfWater = 0;
 
@@ -92,8 +91,6 @@ class _HomePageState extends State<HomePage> {
   Future<void> _incrementFluid(Fluid fluid) async {
     _amountOfWater += fluid.amount;
     await prefs.setInt('counter', _amountOfWater);
-    await box.add(fluid);
-    print(await box.get("fluids"));
     setState(() {
     _updateHeightPercentage();
     });

@@ -14,7 +14,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  var box = Hive.box('fluids');
   late SharedPreferences prefs;
   int _amountOfWater = 0;
 
